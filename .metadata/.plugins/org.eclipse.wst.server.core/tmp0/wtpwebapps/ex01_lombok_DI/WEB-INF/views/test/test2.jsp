@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		
-	<h1>t1 page...</h1>
-		<h1>test test tetstetefe</h1>
+	<h1>TEST2 Page..</h1>
+	
 </body>
 </html>

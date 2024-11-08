@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="ex01"/>
+<aop-project name="ex02_parameter"/>
+<aop-project name="ex01_lombok_DI"/>
+<aop-project name="ex00"/>
 </aop-reference-model>

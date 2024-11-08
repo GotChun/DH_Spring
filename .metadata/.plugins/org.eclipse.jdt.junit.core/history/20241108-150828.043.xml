@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="DiTests.Di_test1" project="ex01_lombok_DI" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="ex01_lombok_DI.DiTests.DiTests" time="0.01" displayname="DiTests" uniqueid="[engine:junit-jupiter]/[class:ex01_lombok_DI.DiTests.DiTests]">
-    <testcase name="Di_test1" classname="ex01_lombok_DI.DiTests.DiTests" time="0.01" displayname="Di_test1()" uniqueid="[engine:junit-jupiter]/[class:ex01_lombok_DI.DiTests.DiTests]/[method:Di_test1()]"/>
-  </testsuite>
-</testrun>

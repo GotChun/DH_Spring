@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		
-	<h1>t1 page...</h1>
-	KEY! : ${KEY1}<br>
-		
+	<h1>T1 Page..</h1>
+	KEY1 : ${KEY1} <br>
 </body>
 </html>
