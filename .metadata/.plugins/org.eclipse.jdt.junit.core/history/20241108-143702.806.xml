@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="lombokTests.PersonDto_Test2" project="ex01_lombok_DI" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="ex01_lombok_DI.lombokTests.lombokTests" time="0.01" displayname="lombokTests" uniqueid="[engine:junit-jupiter]/[class:ex01_lombok_DI.lombokTests.lombokTests]">
+    <testcase name="PersonDto_Test2" classname="ex01_lombok_DI.lombokTests.lombokTests" time="0.01" displayname="PersonDto_Test2()" uniqueid="[engine:junit-jupiter]/[class:ex01_lombok_DI.lombokTests.lombokTests]/[method:PersonDto_Test2()]"/>
+  </testsuite>
+</testrun>

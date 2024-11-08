@@ -1,0 +1,20 @@
+package com.example.ex01.domain.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class PersonDto {
+	
+	private String name;
+	private int age;
+	private String address;
+	
+}

@@ -1,0 +1,19 @@
+package ex01_lombok_DI.DiTests;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.context.annotation.Configuration;
+
+@ExtendWith(SpringExtension.class)
+@Configuration("file:src\main\webapp\WEB-INF\spring\root-context.xml")
+public class DiTests {
+
+	
+	@Test
+	void test() {
+		fail("not yet implemnts");
+	}
+	
+}

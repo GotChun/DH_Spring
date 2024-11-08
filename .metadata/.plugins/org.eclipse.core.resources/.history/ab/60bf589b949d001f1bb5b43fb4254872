@@ -1,0 +1,15 @@
+package ex01_lombok_DI.DiTests;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(SpringExtension.class)
+public class DiTests {
+
+	
+	@Test
+	void test() {
+		fail("not yet implemnts");
+	}
+	
+}

@@ -1,0 +1,5 @@
+package ex01_lombok_DI.DiTests;
+
+public class DiTests {
+
+}

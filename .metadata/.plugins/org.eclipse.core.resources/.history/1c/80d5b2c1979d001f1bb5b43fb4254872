@@ -1,0 +1,18 @@
+package ex01_lombok_DI.DiTests;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+public class DiTests {
+
+	@AutoWired
+	
+	@Test
+	void Di_test1() {
+		System.out.println("wqdqwd");
+	}
+}
