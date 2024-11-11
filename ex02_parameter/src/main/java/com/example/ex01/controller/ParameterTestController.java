@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.ex01.domain.dto.PersonDto;
 
@@ -148,7 +149,7 @@ public class ParameterTestController {
 		model.addAttribute("f1","f1Value");
 		log.info("param/forward");
 		
-		return "forward:/param/forward2";
+		return "forward:/param/forward2";  //forward 2 로가고
 	}
 	
 	@GetMapping("/forward2")
@@ -156,7 +157,7 @@ public class ParameterTestController {
 		model.addAttribute("f2","f2Value");
 		log.info("param/forward2");
 		
-		return "forward:/param/forward3";
+		return "forward:/param/forward3";  //3으로 가고
 	}
 	
 	@GetMapping("/forward3")
@@ -164,11 +165,52 @@ public class ParameterTestController {
 		model.addAttribute("f3","f3Value");
 		log.info("param/forward3");
 		
-		return "param/forward_result";
+		return "param/forward_result";   //최종적으로 result 까지
 	}
 	
+//-----------------------//-----------------------//-----------------------
+	
+	//리다이렉팅
 	
 	
+	
+	@GetMapping("/redirect1")
+	public String r1(Model model,RedirectAttributes redirectAttributes) {	//데이터를 담는 model 객체
+		log.info("/param/redirect...");
+//		model.addAttribute("r1","r1Value");		//쿼리스트링으로 속성 전달(파라미터)
+		redirectAttributes.addAttribute("r1","r1Value");
+		
+		redirectAttributes.addFlashAttribute("r1_flush","r1_flush_value"); //세션 객체에 속성으로 들어감,세션에 저장
+		return "redirect:/param/redirect2";
+	}
+	
+	@GetMapping("/redirect2")
+	public String r2(String r1,@ModelAttribute("r1_flush") String r1_flush,RedirectAttributes redirectAttributes) {
+		log.info("/param/redirect...");
+//		model.addAttribute("r1","r1Value");		//쿼리스트링으로 속성 전달(파라미터)
+		redirectAttributes.addAttribute("r1", r1);
+		redirectAttributes.addAttribute("r2","r2Value");
+		
+		redirectAttributes.addFlashAttribute("r1_flush",r1_flush);
+		redirectAttributes.addFlashAttribute("r2_flush","r2_flush_value"); //세션 객체에 속성으로 들어감
+		return "redirect:/param/redirect_result";
+	}
+//	
+//	@GetMapping("/redirect3")
+//	public String r3(Model model,RedirectAttributes redirectAttributes) {
+//		log.info("/param/redirect...");
+////		model.addAttribute("r1","r1Value");		//쿼리스트링으로 속성 전달(파라미터)
+//		redirectAttributes.addAttribute("r3","r1Value");
+//		
+//		redirectAttributes.addFlashAttribute("r3_flush","r3_flush_value"); //세션 객체에 속성으로 들어감
+//		return "redirect:/param/redirect_result";
+//	}
+//	
+	@GetMapping("redirect_result")		//
+	public void r_result(String r1,Model model) {
+		log.info("/param/redirect..."+r1);
+//		model.addAttribute("r1","r1Value");
+	}
 	
 	
 	
