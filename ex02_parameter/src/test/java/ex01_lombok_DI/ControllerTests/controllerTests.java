@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -58,9 +59,21 @@ public class controllerTests {
 		mockmvc.perform(post("/param/p03").param("name","홍길동") )
 			.andExpect(status().isOk())
 			.andDo(print());
+			
+	}
+	
+	@Test
+	public void t3() throws Exception {
 		
+		//GET / param  01
+		mockmvc.perform(post("/param/p04").content("{'name':'홍길동'}" )
+										.contentType(MediaType.APPLICATION_JSON)
+									)
+			.andExpect(status().isOk())
+			.andDo(print());
 		
 	}
+	
 	
 	
 }
