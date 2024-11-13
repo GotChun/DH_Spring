@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 마이바티스 독타입 매퍼 -->
+
+
+<mapper namespace="com.example.ex01.domain.mapper.MemoMapper">
+
+	<insert id="insert_xml"
+		parameterType="com.example.ex01.domain.dto.MemoDto">  <!-- memoDto 를 파라미터로 지정 -->
+		insert into tbl_memo values(null,#{text},#{writer},now())
+
+	</insert>
+
+	<update id="update_xml"
+		parameterType="com.example.ex01.domain.dto.MemoDto">
+		update tbl_memo set text=#{text} , writer=#{writer} where id=#{id}
+	</update>
+
+	<delete id="delete_xml"
+		parameterType="com.example.ex01.domain.dto.MemoDto">
+		delete from tbl_memo where id=#{id}
+	</delete>
+
+	<select id="select_xml" parameterType="int"
+		resultType="com.example.ex01.domain.dto.MemoDto">	<!-- 결과값을 memoDto로 지정 -->
+		select * from tbl_memo where id=#{id}
+	</select>
+
+
+	<select id="SelectAll_xml_1" resultType="com.example.ex01.domain.dto.MemoDto">
+		select * from tbl_memo
+	</select>
+	<!-- <select id="selectAll_xml_2" ?="com.example.ex01.domain.dto.MemoDto"> 
+		select * from tbl_memo </select> -->
+
+
+	<!-- 여기서 함수를 선언 -->
+</mapper>
+
+

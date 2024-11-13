@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 마이바티스 독타입 매퍼 -->
+
+<mapper namespace="com.example.ex01.domain.mapper.MemoMapper">
+	
+	<insert id="insert_xml" parameterType="com.example.ex01.domain.dto.UserDto">
+		insert into tbl_user values(?,?,?,?,?,?,?,?,?)
+	</insert>
+	
+	<update id="update_xml" parameterType="com.example.ex01.domain.dto.UserDto">
+		update tbl_user set 
+	</update>
+	
+	
+	<delete id="delete_xml" parameterType="com.example.ex01.domain.dto.UserDto">
+	
+	</delete>
+	
+	<select id="select_xml" parameterType="com.example.ex01.domain.dto.UserDto">
+	
+	</select>
+</mapper>
