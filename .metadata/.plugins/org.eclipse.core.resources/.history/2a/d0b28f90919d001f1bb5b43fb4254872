@@ -1,9 +1,0 @@
-package com.example.ex01.domain.dto;
-
-public class PersonDto {
-	
-	private String name;
-	private int age;
-	private String address;
-	
-}

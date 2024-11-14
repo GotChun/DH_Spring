@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="ex08_restController"/>
 <aop-project name="ex02_parameter"/>
 <aop-project name="ex05_dataSource"/>
 <aop-project name="ex01_lombok_DI"/>
 <aop-project name="ex00"/>
 <aop-project name="ex04_exception"/>
 <aop-project name="ex03_DataValidation"/>
+<aop-project name="ex06_test"/>
+<aop-project name="ex06_mybatis"/>
+<aop-project name="ex07_tx"/>
 </aop-reference-model>

@@ -129,7 +129,6 @@ public class myBatisTest {
 		System.out.println(result);
 	}
 	
-	@Test
-	void 
+	
 	
 }
