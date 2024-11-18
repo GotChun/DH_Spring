@@ -34,15 +34,18 @@ public class LoggingAdvice {
 		log.info("AFTER.." + joinPoint.getSignature().getName());	//함수명
 	}
 	
-	@Around("execution(* com.example.ex01.domain.service.MemoServiceImpl.memoUpdate_patch(..))")	
-	public boolean loggingAround(ProceedingJoinPoint pip) throws Throwable {
+	@Around("execution(* com.example.ex01.domain.service.*.*(..))")	
+	public Object loggingAround(ProceedingJoinPoint pip) throws Throwable {
 		
 		//이전시점
 		log.info("AOP AROUND BEFORE");
+		long startTime = System.currentTimeMillis();
 		//MVC 흐름대로 진행
-		boolean isUpdate =(boolean)pip.proceed();	
+		Object isUpdate =(Object)pip.proceed();		
 		//이후시점
 		log.info("AOP AROUND AFTER");
+		long endTime = System.currentTimeMillis();
+		log.info("[AOP] TIME : " + (endTime-startTime)+ "ms");
 		
 		
 		return isUpdate;
