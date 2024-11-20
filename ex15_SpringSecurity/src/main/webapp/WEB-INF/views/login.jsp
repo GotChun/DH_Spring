@@ -19,6 +19,12 @@
 			<label>PASSWORD : </label>
 			<input type="password" name="password">
 		</div>
+		
+		<div>
+			<input type="checkbox" name="remember-me" id="remember-me">
+			<label>로그인 상태 유지</label>
+		</div>
+		
 		<div>
 			<input type="submit" value="LOGIN">
 		</div>
@@ -29,5 +35,6 @@
 		<input type="hidden" name="_csrf" value="${_csrf.token}">
 		
 	</form>
+	${message }
 </body>
 </html>
