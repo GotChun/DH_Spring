@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">  <!-- 타임리프 홈페이지 경로로 하면 최근 버전? 같은걸로 됨 -->
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+
+
+<h1>hihihi</h1>
+
+<div th:insert="~{th/fragments/header::headerFragment}"></div><!--프래그먼트가 뭔데?--> <!--insert는 안에드가고-->
+<main>메인 영역</main>
+<div th:replace="~{th/fragments/footer::footerFragment}"></div><!--프래그먼트가 뭔데?--> <!--replace 는 div태그를 차지함-->
+
+
+
+
+</body>
+</html>

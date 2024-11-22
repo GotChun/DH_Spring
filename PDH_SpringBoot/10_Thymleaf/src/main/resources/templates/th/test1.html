@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">  <!-- 타임리프 홈페이지 경로로 하면 최근 버전? 같은걸로 됨 -->
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+
+
+<h1>hihihi</h1>
+
+NAME: <span th:text="${name}"></span><br>
+MEMO : <span th:text="${memo}"></span><br>
+MEMO.id : <span th:text="${memo.id}"></span><br>
+MEMO.text : <span th:text="${memo.text}"></span><br>
+MEMO.writer : <span th:text="${memo.writer}"></span><br>
+
+<hr>
+<th:block th:if="${isAuth}">
+  <div>로그인 된 상태</div>
+</th:block>
+<th:block th:unless="${isAuth}"> <!-- false 일 때 ? -->
+  <div>로그아웃 상태</div>
+</th:block>
+
+<hr>
+<th:block>
+  <div th:each="dto:${list}">   <!--list 개수만큼 만들어짐-->
+    <span th:text="${dto.id}"></span>
+    <span th:text="${dto.text}"></span>   <!-- dto.text 가 getText() 이랑 같은 의미임 -->
+    <span th:text="${dto.writer}"></span>
+  </div>
+</th:block>
+<hr>
+<a th:href="@{/th/param1(id=${memo.id},text='aaa',writer='bbb')}">ㄱㄱㄱ</a>
+<br>
+<a th:href="@{/th/param2/{id}/{text}/{writer}(id=${memo.id},text='aaa',writer='bbb')}">이동하기2</a>
+
+
+<script th:inline="javascript"> <!--이게 무엇 ?--> <!--자료형이 자바스크립트에 맞게 들어온다는데 ?-->
+
+  //Model Attr String Data
+  const v1=[[ ${name} ]];  //이건 무슨 문법?
+
+  console.log('v1',v1);
+
+  const v2 = [[${memo}]];
+  console.log('v2',v2);
+
+  const v3 = [[ ${list}]];
+  console.log('v3',v3);
+
+  const v4 = [[ ${bookList} ]];
+  console.log('v4',v4);
+
+  const v5 = [[ ${list}]];
+  console.log('v5',v5);
+
+</script>
+
+
+
+
+
+</body>
+</html>
