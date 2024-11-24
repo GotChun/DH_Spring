@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface LendRepository extends JpaRepository<Lend,Long> {
+public interface LendRepository extends JpaRepository<Lend,Long> { //클래스명 , PK 자료형
 
     @Query("SELECT l FROM Lend AS l JOIN FETCH l.user WHERE l.user.username = :username")
     List<Lend> findLendsByUser(@Param("username")String username);

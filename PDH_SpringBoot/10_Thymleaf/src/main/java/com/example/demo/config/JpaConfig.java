@@ -31,7 +31,7 @@ public class JpaConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        entityManagerFactoryBean.setPackagesToScan("com.example.demo.domain.entity");
+        entityManagerFactoryBean.setPackagesToScan("com.example.demo.domain.entity"); //엔티티를 스캔한다.
 
         Properties jpaProperties = new Properties();
 

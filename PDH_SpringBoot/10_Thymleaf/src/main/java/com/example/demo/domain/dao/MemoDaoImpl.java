@@ -36,6 +36,6 @@ public class MemoDaoImpl {
 	public int insert(MemoDto memoDto) {
 		sqlSession.insert(namespace + "Insert",memoDto);
 		return memoDto.getId();
-	}
+	}	//지금 보니까 lombok 이 제대로 설치가 되지 않은것 같다. 학원에서 추가하도록 하자.
 
 }

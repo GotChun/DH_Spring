@@ -39,7 +39,8 @@ dependencies {
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
 	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
 	
-	
+
+
 	// https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator 유효성 검사 기능
 	implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
 
