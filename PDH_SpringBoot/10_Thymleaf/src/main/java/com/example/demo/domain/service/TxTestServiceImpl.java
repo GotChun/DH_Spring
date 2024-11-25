@@ -35,7 +35,7 @@ public class TxTestServiceImpl {
     
     
         //JPA EXCEPTION
-//        @Transactional(rollbackFor = SQLException.class,transactionManager = "jpaTransactionManager")
+        @Transactional(rollbackFor = SQLException.class,transactionManager = "jpaTransactionManager")
         void jpaRepository() throws SQLException {
             log.info("jpa리포지토리 시작 ㄱㄱㄱㄱ");
 
