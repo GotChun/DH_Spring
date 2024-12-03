@@ -5,29 +5,95 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.15/index.global.min.js"></script>
 
+    <style>
+        .dialog,
+        .add-modal
+        {
+            position: fixed;
+            width:350px;
+            height: 200px;
+            background-color: red;
+            z-index:100;
+            left:0;right:0;top:0;bottom:0;
+            margin:auto;
+            border:1px solid;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-         var calendarEl = document.getElementById('calendar');
- calendar = new FullCalendar.Calendar(calendarEl, {
+        var calendarEl = document.getElementById('calendar');
+        const popupEl = document.querySelector('.dialog');
+        const cancelEl = popupEl.querySelector('.cancel');
+        cancelEl.addEventListener('click',function(){
+            popupEl.classList.add('hidden');
+        })
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
 
                googleCalendarApiKey: 'AIzaSyChZZpWB_f-Tn5sMBWTfg8UDLJ-v79Sm8E',
-                 events: {
-                googleCalendarId: '1f94a9a08dfdb514a425e7180619d87248f1f7de25315fdf894f6c8b74406194@group.calendar.google.com'
-             },
+               events: {
+               googleCalendarId: '1f94a9a08dfdb514a425e7180619d87248f1f7de25315fdf894f6c8b74406194@group.calendar.google.com'
+            },
+            //캘린더
+    eventClick: function(info) {
+    info.jsEvent.preventDefault(); // 클릭이벤트 동작막음
+
+    console.log('info',info);
+    console.log('info',info.event.extendedProps);
+
+    popupEl.classList.remove('hidden');
+    popupEl.querySelector('.title').textContent=info.event.title;
+    popupEl.querySelector('.desc').textContent=info.event.extendedProps.description;
+    },
+
+     dateClick: function(info) {
+//         alert('Date: ' + info.dateStr);
+  //       alert('Resource ID: ' + info.resource.id);
+        const addEl = document.querySelector('add-modal');
+        addEl.classList.remove('hidden');
+        }
+
+    });
 
 
-
-          });
           calendar.render();
                });
 
 
     </script>
+
 </head>
 <body>
-<div id='calendar'></div>
 
 
+<div id='calendar'>
+
+</div>
+<div class="dialog hidden">
+    <div class="title"></div>
+    <div class="desc"></div>
+    <div>
+        <a href="javascript:void(0)" class="cancel">닫기</a>
+    </div>
+
+    <div class="add-modal hidden">
+        <form action="/google/cal/post" method="GET">
+            <input type="text" name="title" placeholder="TITLE"><br>
+            <input type="text" name="desc" placeholder="DESCRIPTION"><br>
+            <input type="submit" />
+
+        </form>
+
+
+    </div>
+
+
+</div>
 </body>
 </html>
+

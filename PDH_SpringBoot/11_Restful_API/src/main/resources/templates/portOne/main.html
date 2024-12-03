@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script> <!--포트원 cdn-->
+</head>
+<body>
+<button onclick="pay()">결제하기</button>
+<hr>
+<input type="text" name="phone">
+<button onclick="certificate()"> 본인인증 </button>
+
+<script>
+    IMP.init("imp22846748");
+
+    function pay() {
+      IMP.request_pay({
+        channelKey: "channel-key-e74421f7-28c3-48a5-a079-9c5bec2cfb61",
+        pay_method: "phone",
+        merchant_uid: new Date().getTime(),   //결제가 완료되면 이루어진 거래건이라고 떠서 이거를 바꿔줘야한ㄷ
+        name: "테스트 결제",
+        amount: 100,
+        buyer_tel: "010-0000-0000",
+      },function(resp){
+            console.log(resp);
+      });
+    }
+
+    function certificate() {
+        IMP.certification({
+            channelKey:"channel-key-65897e8d-540f-4fb5-bdce-ab85409c89ae",
+            merchant_uid:"A010002002",
+            min_age:14,
+            name:"대해팍",
+            phone:"01024888155",
+            carrier:"KTF",
+
+        },function(resp){
+            console.log(resp);
+            });
+    }
+
+
+
+</script>
+
+<script>
+
+
+</script>
+
+</body>
+</html>

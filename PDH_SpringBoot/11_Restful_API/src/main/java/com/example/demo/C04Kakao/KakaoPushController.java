@@ -24,8 +24,6 @@ public class KakaoPushController {
         headers.add("Content-Type","application/x-www-form-urlencoded;charset=utf-8");
 
         //요청 파라미터
-        
-
 
 
     }

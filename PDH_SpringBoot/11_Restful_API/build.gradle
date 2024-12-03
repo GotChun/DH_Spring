@@ -54,6 +54,9 @@ dependencies {
 	//자바 메일
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 
+	//자바 캘린더 라이브러리
+	implementation 'com.google.apis:google-api-services-calendar:v3-rev20241101-2.0.0'
+
 }
 
 tasks.named('test') {
