@@ -52,7 +52,7 @@ public class PrincipalDetailsOauth2ServiceImpl extends DefaultOAuth2UserService 
         //OAUTH2 SERVER 구별
         Oauth2UserInfo oAuth2UserInfo = null;
         String provider = userRequest.getClientRegistration().getRegistrationId();  //클라이언트 ID 가져옴
-        if(provider.startsWith("kakao")){
+        if(provider.startsWith("kakao")){   //레지스트레이션 ID 가 kakao 로 시작한다면
             String id = oAuthUser.getAttributes().get("id").toString(); //id 정보 뽑아옴
             Map<String,Object> attributes = (Map<String, Object>) oAuthUser.getAttributes().get("properties");  //Map 형태로 받아오는듯 ?
 //            System.out.println("속성 ? : "+attributes);
@@ -61,7 +61,6 @@ public class PrincipalDetailsOauth2ServiceImpl extends DefaultOAuth2UserService 
             System.out.println("뭐임 ? : "+oAuth2UserInfo);
         }
         else if(provider.startsWith("naver")){
-
                     ; //id 정보 뽑아옴
             Map<String,Object> attributes = (Map<String, Object>) oAuthUser.getAttributes().get("response");  //Map 형태로 받아오는듯 ?
             String id = attributes.get("id").toString();        //response 안에 id value 값을 받아옴

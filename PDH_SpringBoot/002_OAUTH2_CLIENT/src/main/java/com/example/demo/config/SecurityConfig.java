@@ -1,7 +1,7 @@
 package com.example.demo.config;
 
 
-import com.example.demo.config.auth.LogoutHandler.CustomLogoutHandler;
+
 import com.example.demo.config.auth.LogoutHandler.CustomLogoutSuccessHandler;
 import com.example.demo.config.auth.exceptionHandler.CustomAccessDeniedHandler;
 import com.example.demo.config.auth.exceptionHandler.CustomAuthenticationEntryPoint;
@@ -127,8 +127,8 @@ public class SecurityConfig {
 //        return userDetailsManager;
 //    }
     @Bean
-    CustomLogoutHandler customLogoutHandler(){
-        return new CustomLogoutHandler();
+    com.example.demo.config.auth.logoutHandler.CustomLogoutHandler customLogoutHandler(){
+        return new com.example.demo.config.auth.logoutHandler.CustomLogoutHandler();
     }
     @Bean
     CustomLogoutSuccessHandler customLogoutSuccessHandler(){
