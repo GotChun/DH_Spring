@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -11,7 +12,7 @@
         {
             position: fixed;
             width:350px;
-            height: 200px;
+            height: 250px;
             background-color: red;
             z-index:100;
             left:0;right:0;top:0;bottom:0;
@@ -54,7 +55,7 @@
      dateClick: function(info) {
 //         alert('Date: ' + info.dateStr);
   //       alert('Resource ID: ' + info.resource.id);
-        const addEl = document.querySelector('add-modal');
+        const addEl = document.querySelector('.add-modal');
         addEl.classList.remove('hidden');
         }
 
@@ -80,18 +81,14 @@
     <div>
         <a href="javascript:void(0)" class="cancel">닫기</a>
     </div>
+</div>
+<div class="add-modal hidden">
+    <form action="/google/cal/post" method="GET">
+        <input type="text" name="title" placeholder="TITLE"><br>
+        <input type="text" name="desc" placeholder="DESCRIPTION"><br>
+        <input type="submit" />
 
-    <div class="add-modal hidden">
-        <form action="/google/cal/post" method="GET">
-            <input type="text" name="title" placeholder="TITLE"><br>
-            <input type="text" name="desc" placeholder="DESCRIPTION"><br>
-            <input type="submit" />
-
-        </form>
-
-
-    </div>
-
+    </form>
 
 </div>
 </body>

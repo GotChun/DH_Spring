@@ -12,7 +12,7 @@ import java.io.IOException;
 public class CustomAuthenticationEntryPoint implements org.springframework.security.web.AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        log.info("CustomAuthenticationEntryPoint commence : {}", authException.getMessage());
+        log.info("CustomAuthenticationEntryPoint commence : ", authException.getMessage());
         response.sendRedirect("/login?error="+authException.getMessage());
     }
 }

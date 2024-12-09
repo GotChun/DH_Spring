@@ -1,6 +1,6 @@
 package com.example.demo.C07PortOne;
 
-import com.example.demo.C04Kakao.KakaoLoginController;
+
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
@@ -13,6 +13,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
@@ -27,6 +28,7 @@ public class PortOneController {
         log.info("GET /portone포트원 !.,,!!");
     }
 
+    @ResponseBody
     @GetMapping("/token")
     public void getToken(){
         log.info("GET /portone토��요청 !.,,!!");
@@ -41,7 +43,7 @@ public class PortOneController {
 
         MultiValueMap<String,String> params = new LinkedMultiValueMap<>() {
         };
-        
+
         params.add("imp_key", "7024778378801746");
         params.add("imp_secret","74GZZcXgu4eC1U3AyG1gB9BN0ssvOYaUYSXnRt1jdLbo4jSSV52VM4WJcKrO6vYoNXJL2Mv2k5y4FO81");
 
@@ -54,11 +56,12 @@ public class PortOneController {
         this.tokenResponse = response.getBody();
     }
 
+    @ResponseBody
     @GetMapping("/getPayments")
     public void getPayments(){
         log.info("GET /portone결제요청 !.,,!!");
 
-        String url = "https://api.iamport.kr/payments?imp_uid[]=imp_863673229633&merchant_uid[]=INIpayTest";
+        String url = "https://api.iamport.kr/payments?imp_uid[]=imp_645183837239&merchant_uid[]=INIpayTest";
 
         //HTTP 요청 헤더
         HttpHeaders headers = new HttpHeaders();
@@ -68,7 +71,7 @@ public class PortOneController {
 
 
         //HTTP 엔티티(헤더_파라미터)
-        HttpEntity      entity = new HttpEntity<>(headers);
+        HttpEntity entity = new HttpEntity<>(headers);
         //HTTP 요청 후 응답받기
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET,entity, String.class);

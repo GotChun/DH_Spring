@@ -1,7 +1,7 @@
 package com.example.demo.C05Naver;
 
 
-import com.example.demo.C04Kakao.KakaoLoginController;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

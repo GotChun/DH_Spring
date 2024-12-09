@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,7 +36,13 @@ public class SecurityConfig {
     public SecurityFilterChain config(HttpSecurity http) throws Exception {
 
         //CSRF 비활성화
-        http.csrf((config)->{config.disable();}) ;
+        http.csrf((config)->{config.disable();}) ;  //
+//        http.csrf(new CsrfConfigurer<HttpSecurity>(){
+//            @Override
+//            public void configure(HttpSecurity http) throws Exception {
+//                http.csrf().disable();
+//            }
+//        });
 
         //권한체크
         http.authorizeHttpRequests((auth)->{

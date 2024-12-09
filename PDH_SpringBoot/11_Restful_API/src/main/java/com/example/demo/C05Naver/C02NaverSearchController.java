@@ -1,6 +1,6 @@
 package com.example.demo.C05Naver;
 
-import com.example.demo.C04Kakao.KakaoLoginController;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +23,7 @@ public class C02NaverSearchController {
 
     @GetMapping("/book/{keyword}")
     @ResponseBody
-    public String search(@PathVariable("keyword") String keyword){
+    public String search(@RequestParam("keyword") String keyword){
         log.info("GET /naver/search/01.,,!!"+keyword);
 
         String url = "https://openapi.naver.com/v1/search/book.json?query="+keyword;

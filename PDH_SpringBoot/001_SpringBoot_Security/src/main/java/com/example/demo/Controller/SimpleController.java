@@ -24,25 +24,25 @@ import java.security.Principal;
 @Slf4j
 public class SimpleController   {
 
-    @GetMapping("/user")
-    public void user(){
-        log.info("user access");
-
-    }
-
-//	@GetMapping("/user")
-//	public void user(Authentication authentication, @AuthenticationPrincipal PrincipalDetails principalDetails, Model model) {
-//		log.info("GET /user..." + authentication);
-//		log.info("name..." + authentication.getName());
-//		log.info("principal..." + authentication.getPrincipal());
-//		log.info("authorities..." + authentication.getAuthorities());
-//		log.info("details..." + authentication.getDetails());
-//		log.info("credential..." + authentication.getCredentials());
+//    @GetMapping("/user")
+//    public void user(){
+//        log.info("user access");
 //
-//        model.addAttribute("authentication", authentication);
-//        model.addAttribute("principal", principalDetails);
-//
-//	}
+//    }
+
+	@GetMapping("/user")
+	public void user(Authentication authentication, @AuthenticationPrincipal PrincipalDetails principalDetails, Model model) {
+		log.info("GET /user..." + authentication);
+		log.info("name..." + authentication.getName());
+		log.info("principal..." + authentication.getPrincipal());
+		log.info("authorities..." + authentication.getAuthorities());
+		log.info("details..." + authentication.getDetails());
+		log.info("credential..." + authentication.getCredentials());
+
+        model.addAttribute("authentication", authentication);
+        model.addAttribute("principal", principalDetails);
+
+	}
 
 
 //	@GetMapping("/user")
